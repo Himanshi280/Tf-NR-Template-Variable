@@ -7,3 +7,6 @@ variable "name" {
 variable "permissions" {
   type = string
 }
+variable "var1" {
+  type = any
+}

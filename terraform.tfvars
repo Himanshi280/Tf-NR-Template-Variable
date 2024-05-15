@@ -11,32 +11,16 @@ dashboard = {
   height1 = 4
     
   var1 = {
-    "1" = {
-      values = ["Plan Service"]
+      values = ["values"]
       name   = "var1"
-
-
       account_ids = [411834]
-      query       = "FROM Transaction SELECT uniques(appName) "
+      query       = "FROM Transaction SELECT uniques(appName) in ('Billing service' , 'Box', 'Plan Service')"
 
       replacement_strategy = "default"
       title                = "title"
       type                 = "nrql"
     }
-    "2" = {
-      values = ["Billing service"]
-      name   = "var2"
-
-
-      account_ids = [411834]
-      query       = "FROM Transaction SELECT uniques(appName) "
-
-      replacement_strategy = "default"
-      title                = "title"
-      type                 = "nrql"
-    }
-   
-  }
+    
 }
 
 

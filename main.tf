@@ -19,23 +19,17 @@ resource "newrelic_one_dashboard" "dash1" {
     }
   }
 
-
-  dynamic "variable" {
-    for_each = var.dashboard.var1
-    iterator = template
-
-    content {
-      default_values = template.value.values
-      name           = template.value.name
+  variable {
+      default_values = var.var1.default_values
+      name           = var.var1.name
 
       nrql_query {
-        account_ids = template.value.account_ids
-        query       = template.value.query
+        account_ids = var.var1.account_ids
+        query       = var.var1.query
       }
-      replacement_strategy = template.value.replacement_strategy
-      title                = template.value.title
-      type                 = template.value.type
-    }
-
-  }
+      replacement_strategy = var.var1.replacement_strategy
+      title                = var.var1.title
+      type                 = var.var1.type
+    
+  } 
 }
